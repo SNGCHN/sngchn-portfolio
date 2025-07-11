@@ -1,11 +1,3 @@
----
-name: Pull Request
-about: 작업 내용을 Pull Request로 올립니다.
-title: ''
-labels: ''
-assignees: ''
----
-
 ### 🎟️ 관련 이슈
 Closes #
 

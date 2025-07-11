@@ -1,6 +1,6 @@
 ---
-name: ✨ Feature Request (기능 요청)
-about: 만들고 싶은 새로운 기능에 대해 제안합니다.
+name: ✨ Feature Request (추가할 기능)
+about: 추가할 기능 이슈들을 작성합니다.
 title: "[Feat] "
 labels: "feature, enhancement"
 assignees: ''

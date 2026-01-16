@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "motion/react";
-import { Github, Mail, Linkedin } from "lucide-react";
+import React from "react";
 
 export const ContactSection = () => {
   return (
@@ -25,10 +25,10 @@ export const ContactSection = () => {
         <div className="flex-1 flex flex-col justify-center items-center text-center">
           <div className="mb-20">
             <a
-              href="mailto:contact@sngchn.dev"
+              href="mailto:sngchn0312@naver.com"
               className="text-2xl md:text-5xl font-light tracking-tight hover:text-muted-foreground transition-colors border-b border-foreground/10 pb-2"
             >
-              contact@sngchn.dev
+              sngchn0312@naver.com
             </a>
           </div>
 
@@ -36,7 +36,7 @@ export const ContactSection = () => {
             {[
               { icon: Github, label: "GitHub", href: "#" },
               { icon: Linkedin, label: "LinkedIn", href: "#" },
-              { icon: Mail, label: "Email", href: "mailto:contact@sngchn.dev" },
+              { icon: Mail, label: "Email", href: "mailto:sngchn0312@naver.com" },
             ].map((item, i) => (
               <motion.a
                 key={item.label}

@@ -1,18 +1,68 @@
 "use client";
 
+import { ArrowRight, Award, Calendar, Download, ExternalLink, Users, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import React from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { X, ExternalLink, Download, ArrowRight, Calendar, Users, Award } from "lucide-react";
 import { ImageWithFallback } from "../ImageWithFallback/ImageWithFallback";
+
+interface SidebarLink {
+  label: string;
+  href: string;
+  primary?: boolean;
+}
+
+interface Achievement {
+  title: string;
+  desc: string;
+}
+
+interface Challenge {
+  problem: string;
+  solution: string;
+}
+
+interface SidebarContentData {
+  id: string;
+  title: string;
+  category?: string;
+  description?: string;
+  details?: string;
+  image?: string;
+  images?: string[];
+  tech?: string[];
+  keywords?: string[];
+  links?: SidebarLink[];
+  github?: string;
+  link?: string;
+  timeline?: string;
+  team?: string;
+  role?: string;
+  contribution?: number;
+  achievements?: Achievement[];
+  challenges?: Challenge[];
+}
 
 interface DetailSidebarProps {
   isOpen: boolean;
   onClose: () => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  content: any;
+  content: SidebarContentData | null;
 }
 
 export const DetailSidebar = ({ isOpen, onClose, content }: DetailSidebarProps) => {
+  // Sidebar가 열렸을 때 배경 스크롤 잠금
+  React.useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    // Cleanup: 컴포넌트 언마운트 시 스크롤 복구
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   if (!content) return null;
 
   return (
@@ -167,8 +217,8 @@ export const DetailSidebar = ({ isOpen, onClose, content }: DetailSidebarProps) 
                         </div>
                       </summary>
                       <div className="pb-8 flex flex-wrap gap-2 animate-in fade-in slide-in-from-top-2 duration-500">
-                        {content.tech?.length > 0 ? (
-                          content.tech.map((t: string) => (
+                        {(content.tech?.length ?? 0) > 0 ? (
+                          content.tech?.map((t: string) => (
                             <span
                               key={t}
                               className="px-4 py-2 bg-foreground/5 text-[10px] font-bold uppercase tracking-widest border border-transparent hover:border-foreground/10 transition-colors"
@@ -197,8 +247,8 @@ export const DetailSidebar = ({ isOpen, onClose, content }: DetailSidebarProps) 
                         </div>
                       </summary>
                       <div className="pb-8 flex flex-wrap gap-2 animate-in fade-in slide-in-from-top-2 duration-500">
-                        {content.keywords?.length > 0 ? (
-                          content.keywords.map((k: string) => (
+                        {(content.keywords?.length ?? 0) > 0 ? (
+                          content.keywords?.map((k: string) => (
                             <span
                               key={k}
                               className="px-4 py-2 border border-foreground/10 text-[10px] font-bold uppercase tracking-widest text-foreground/50 hover:text-foreground hover:border-foreground/30 transition-colors"
@@ -241,7 +291,6 @@ export const DetailSidebar = ({ isOpen, onClose, content }: DetailSidebarProps) 
                             Key Achievements
                           </h4>
                           <div className="grid grid-cols-1 gap-4">
-                            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                             {(
                               content.achievements || [
                                 {
@@ -253,7 +302,7 @@ export const DetailSidebar = ({ isOpen, onClose, content }: DetailSidebarProps) 
                                   desc: "재사용 가능한 40개 이상의 컴포넌트 라이브러리 구축",
                                 },
                               ]
-                            ).map((item: any, idx: number) => (
+                            ).map((item: Achievement, idx: number) => (
                               <div
                                 key={item.title || idx}
                                 className="flex gap-4 items-start group/item"
@@ -278,7 +327,6 @@ export const DetailSidebar = ({ isOpen, onClose, content }: DetailSidebarProps) 
                             Troubleshooting
                           </h4>
                           <div className="space-y-6">
-                            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                             {(
                               content.challenges || [
                                 {
@@ -287,7 +335,7 @@ export const DetailSidebar = ({ isOpen, onClose, content }: DetailSidebarProps) 
                                     "React Window를 도입하여 가상 리스트 구현 및 메모이제이션 전략 수립",
                                 },
                               ]
-                            ).map((item: any, idx: number) => (
+                            ).map((item: Challenge, idx: number) => (
                               <div
                                 key={item.problem || idx}
                                 className="border-l-2 border-foreground/5 pl-6 py-1 relative"
@@ -347,8 +395,7 @@ export const DetailSidebar = ({ isOpen, onClose, content }: DetailSidebarProps) 
                       Resources
                     </h3>
                     <div className="grid grid-cols-1 gap-3">
-                      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                      {content.links?.map((link: any) => (
+                      {content.links?.map((link: SidebarLink) => (
                         <a
                           key={link.label}
                           href={link.href}

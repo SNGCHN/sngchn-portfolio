@@ -16,13 +16,16 @@ const sections = [
  * @description 스크롤 위치에 따라 반응하는 플로팅 인디케이터
  * - 하단 중앙에 고정되어 현재 사용자의 위치를 직관적으로 알려줍니다.
  * - 클릭 시 해당 섹션으로 부드럽게 스크롤됩니다.
+ * - Sidebar가 열리면 아래로 슬라이드되어 숨겨집니다.
  */
 export const ScrollIndicator = ({
   activeSection,
   isHidden,
+  sidebarOpen = false,
 }: {
   activeSection: string;
   isHidden: boolean;
+  sidebarOpen?: boolean;
 }) => {
   // 특정 ID를 가진 섹션으로 스크롤 이동 함수
   const scrollTo = (id: string) => {
@@ -39,7 +42,11 @@ export const ScrollIndicator = ({
     <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-100 flex items-center">
       <motion.div
         initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        animate={{
+          y: sidebarOpen ? 100 : 0,
+          opacity: sidebarOpen ? 0 : 1,
+        }}
+        transition={{ type: "spring", damping: 20, stiffness: 300 }}
         // Glassmorphism 효과가 가미된 배경 스타일
         className="flex items-center gap-1 p-1.5 rounded-full bg-foreground/5 backdrop-blur-md shadow-[0_20px_40px_rgba(0,0,0,0.1)] border border-foreground/10"
       >

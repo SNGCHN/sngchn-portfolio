@@ -12,9 +12,13 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "next": "15.3.5",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "lucide-react": "^0.562.0",
+    "motion": "^12.26.2",
+    "next": "16.1.2",
+    "pretendard": "^1.3.9",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "sonner": "^2.0.7"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",

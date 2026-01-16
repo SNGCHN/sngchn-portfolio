@@ -13,12 +13,14 @@ interface NavigationProps {
 
 /**
  * @description 상단 네비게이션 위젯
+ * 테마 토글, 데스크톱 메뉴, 모바일 오버레이 메뉴를 포함합니다.
  */
 export const Navigation = ({ onOpenDesignSystem, theme, toggleTheme }: NavigationProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // 모바일 메뉴 오픈 상태
+  const [scrolled, setScrolled] = useState(false); // 스크롤 여부 (배경 스타일 변경용)
 
   useEffect(() => {
+    // 윈도우 스크롤 이벤트를 통해 상단바의 시각적 피드백(투명도, 높이 등) 조절
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
@@ -26,6 +28,7 @@ export const Navigation = ({ onOpenDesignSystem, theme, toggleTheme }: Navigatio
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // 네비게이션 메뉴 아이템 구성
   const menuItems = [
     { label: "HOME", href: "#home" },
     { label: "PROJECTS", href: "#projects" },
@@ -36,6 +39,7 @@ export const Navigation = ({ onOpenDesignSystem, theme, toggleTheme }: Navigatio
 
   return (
     <>
+      {/* 메인 헤더 바 */}
       <nav
         className={`fixed top-0 left-0 w-full z-150 transition-all duration-700 px-6 md:px-12 flex justify-between items-center backdrop-blur-2xl border-b ${
           theme === "dark"
@@ -43,6 +47,7 @@ export const Navigation = ({ onOpenDesignSystem, theme, toggleTheme }: Navigatio
             : `bg-black/[0.05] border-black/5 ${scrolled ? "py-3 bg-black/[0.08] shadow-sm" : "py-4"}`
         }`}
       >
+        {/* 로고: 클릭 시 최상단으로 부드럽게 스크롤 */}
         <motion.button
           type="button"
           initial={{ opacity: 0, x: -20 }}
@@ -53,6 +58,7 @@ export const Navigation = ({ onOpenDesignSystem, theme, toggleTheme }: Navigatio
           SNGCHN
         </motion.button>
 
+        {/* 데스크톱 메뉴 영역 */}
         <div className="hidden md:flex items-center gap-6">
           <div className="flex items-center gap-8 border-r border-foreground/10 pr-8">
             {menuItems.map((item) => (
@@ -67,6 +73,7 @@ export const Navigation = ({ onOpenDesignSystem, theme, toggleTheme }: Navigatio
           </div>
 
           <div className="flex items-center gap-4">
+            {/* 외부 링크 (블로그 등) */}
             <a
               href="/blog"
               className="px-5 py-2 border border-foreground/10 rounded-full text-[9px] font-bold tracking-[0.2em] hover:bg-foreground hover:text-background transition-all uppercase cursor-pointer"
@@ -74,6 +81,7 @@ export const Navigation = ({ onOpenDesignSystem, theme, toggleTheme }: Navigatio
               Blog
             </a>
 
+            {/* 테마 토글 버튼: 라이트/다크 모드 전환 */}
             <button
               type="button"
               onClick={toggleTheme}
@@ -83,6 +91,7 @@ export const Navigation = ({ onOpenDesignSystem, theme, toggleTheme }: Navigatio
               {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
             </button>
 
+            {/* 디자인 시스템 뷰어 호출 버튼 */}
             <button
               type="button"
               onClick={onOpenDesignSystem}
@@ -93,7 +102,7 @@ export const Navigation = ({ onOpenDesignSystem, theme, toggleTheme }: Navigatio
           </div>
         </div>
 
-        {/* Mobile Controls */}
+        {/* 모바일 전용 컨트롤 (테마 토글, 햄버거 메뉴) */}
         <div className="flex items-center gap-4 md:hidden">
           <button
             type="button"
@@ -114,6 +123,7 @@ export const Navigation = ({ onOpenDesignSystem, theme, toggleTheme }: Navigatio
         </div>
       </nav>
 
+      {/* 모바일 풀스크린 오버레이 메뉴: AnimatePresence를 사용한 슬라이드 인/아웃 */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

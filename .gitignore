@@ -42,3 +42,6 @@ next-env.d.ts
 
 # IDE settings
 .idea/
+
+# AI Agent guidelines
+.agent/

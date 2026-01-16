@@ -1,21 +1,3 @@
-// SSR 환경에서 깨진 localStorage 전역 객체로 인한 에러 방지
-if (typeof window === "undefined") {
-  const noop = () => null;
-  const storageMock = {
-    getItem: noop,
-    setItem: noop,
-    removeItem: noop,
-    clear: noop,
-    length: 0,
-    key: noop,
-  };
-
-  if (typeof global !== "undefined") {
-    // biome-ignore lint/suspicious/noExplicitAny: 특정 환경에서 주입된 전역 객체를 수정하기 위해 필요함
-    (global as any).localStorage = storageMock;
-  }
-}
-
 import type { Metadata } from "next";
 import "./globals.css";
 

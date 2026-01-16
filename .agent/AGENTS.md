@@ -16,8 +16,8 @@
   - `src/pages-screen`: 실제 페이지 UI (App Router의 `page.tsx`는 여기를 호출만 함)
 
 ## 🛠 기술 스택 (최신 버전 유지)
-- **Next.js**: 15.3.5+ (최신 버전 업그레이드 지향)
-- **React**: 19.x
+- **Next.js**: 16.1.2 (최신 버전 유지 중)
+- **React**: 19.2.3
 - **Animation**: **Motion** (`motion/react`)
 - **UI Components**: **Sonner** (Toast), **Lucide React** (Icons)
 - **Styling**: **Tailwind CSS v4** (Zero Config, `@theme` 기반)
@@ -53,4 +53,4 @@
 - 디자인 토큰: `src/app/globals.css`
 - 공유 UI: `src/shared/ui/`
 - 메인 화면: `src/pages-screen/home/ui/HomeScreen.tsx`
-- SSR 대응 폴리필: `src/app/layout.tsx` (서버측 `localStorage` 에러 방지용)
+- 레이아웃: `src/app/layout.tsx`

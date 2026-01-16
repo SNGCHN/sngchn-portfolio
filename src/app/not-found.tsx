@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { CustomCursor } from "@/shared/ui/CustomCursor/CustomCursor";
 import { ArrowLeft, Home } from "lucide-react";
+import { motion } from "motion/react";
+import React, { useEffect, useState } from "react";
 
 export default function NotFound() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -26,6 +27,7 @@ export default function NotFound() {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-background relative overflow-hidden">
+      <CustomCursor />
       {/* Background Gradient Effect */}
       <motion.div
         className="absolute inset-0 pointer-events-none"

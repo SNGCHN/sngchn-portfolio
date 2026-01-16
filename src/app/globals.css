@@ -71,6 +71,11 @@
   ::-webkit-scrollbar {
     display: none;
   }
+
+  /* 부드러운 스크롤 스냅 애니메이션 */
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer utilities {

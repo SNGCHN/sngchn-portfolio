@@ -38,10 +38,7 @@ export const ProjectSection = () => {
                 window.dispatchEvent(event);
               }}
             >
-              <div className="flex items-start md:items-baseline gap-4 md:gap-24 w-full md:w-auto">
-                <span className="text-[10px] md:text-[12px] font-bold text-muted-foreground/40 font-mono group-hover:text-primary transition-colors mt-1 md:mt-0">
-                  {project.id}
-                </span>
+              <div className="flex items-start md:items-baseline w-full md:w-auto">
                 <div className="flex flex-col gap-2 flex-1">
                   <h3 className="text-3xl md:text-6xl font-bold tracking-tighter group-hover:translate-x-4 transition-transform duration-500 group-hover:text-primary leading-tight">
                     {project.title}

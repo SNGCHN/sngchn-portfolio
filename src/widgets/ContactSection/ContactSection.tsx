@@ -22,38 +22,28 @@ export const ContactSection = () => {
           </h2>
         </motion.div>
 
-        <div className="flex-1 flex flex-col justify-center items-center text-center">
-          <div className="mb-20">
-            <a
-              href="mailto:sngchn0312@naver.com"
-              className="text-2xl md:text-5xl font-light tracking-tight hover:text-muted-foreground transition-colors border-b border-foreground/10 pb-2"
-            >
-              sngchn0312@naver.com
-            </a>
-          </div>
-
-          <div className="flex justify-center gap-16">
+        <div className="flex-1 flex items-center justify-center">
+          <div className="flex justify-center gap-12">
             {[
-              { icon: Github, label: "GitHub", href: "#" },
-              { icon: Linkedin, label: "LinkedIn", href: "#" },
-              { icon: Mail, label: "Email", href: "mailto:sngchn0312@naver.com" },
+              { icon: Github, href: "https://github.com/sngchn" },
+              { icon: Linkedin, href: "https://linkedin.com/in/sngchn" },
+              { icon: Mail, href: "mailto:sngchn0312@naver.com" },
             ].map((item, i) => (
               <motion.a
-                key={item.label}
+                key={item.href}
                 href={item.href}
+                target={item.href.startsWith("mailto") ? undefined : "_blank"}
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 + i * 0.1 }}
-                className="flex flex-col items-center gap-4 text-muted-foreground hover:text-foreground transition-all group"
+                className="text-muted-foreground hover:text-foreground transition-all"
               >
                 <item.icon
-                  size={24}
+                  size={28}
                   strokeWidth={1.5}
-                  className="group-hover:scale-110 transition-transform"
+                  className="hover:scale-110 transition-transform"
                 />
-                <span className="text-[10px] uppercase tracking-[0.4em] font-bold">
-                  {item.label}
-                </span>
               </motion.a>
             ))}
           </div>

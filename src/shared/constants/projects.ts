@@ -53,7 +53,7 @@ export const PROJECTS_DATA: ProjectData[] = [
   {
     id: "PROJ-02",
     type: "project",
-    title: "VOYAGE X",
+    title: "VOYAGEX",
     category: "Space Travel Platform",
     description:
       "우주 여행에 대한 정보와 상품을 제공하는 플랫폼입니다. 커뮤니티 게시판 전체와 NASA 뉴스 크롤링 기능을 담당했습니다.",

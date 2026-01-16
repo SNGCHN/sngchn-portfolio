@@ -41,11 +41,8 @@ export const SkillSection = () => {
               transition={{ delay: groupIndex * 0.1, duration: 0.6 }} // 순차 등장 애니메이션
               className="flex flex-col gap-4 md:gap-6"
             >
-              {/* 카테고리 헤더: 번호와 카테고리명을 나란히 배치 */}
-              <div className="flex items-center gap-4">
-                <span className="text-[9px] md:text-[10px] font-mono text-muted-foreground/40">
-                  0{groupIndex + 1}
-                </span>
+              {/* 카테고리 헤더 */}
+              <div className="flex items-center">
                 <h3 className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] md:tracking-[0.4em] font-bold text-foreground">
                   {group.category}
                 </h3>

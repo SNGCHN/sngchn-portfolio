@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { MainSection } from "../../../widgets/MainSection/MainSection";
-import { ProjectSection } from "../../../widgets/ProjectSection/ProjectSection";
-import { SkillSection } from "../../../widgets/SkillSection/SkillSection";
-import { JourneySection } from "../../../widgets/JourneySection/JourneySection";
-import { ContactSection } from "../../../widgets/ContactSection/ContactSection";
+import { CustomCursor } from "../../../shared/ui/CustomCursor/CustomCursor";
 import { DetailSidebar } from "../../../shared/ui/DetailSidebar/DetailSidebar";
 import { ScrollIndicator } from "../../../shared/ui/ScrollIndicator/ScrollIndicator";
-import { CustomCursor } from "../../../shared/ui/CustomCursor/CustomCursor";
+import { ContactSection } from "../../../widgets/ContactSection/ContactSection";
+import { JourneySection } from "../../../widgets/JourneySection/JourneySection";
+import { MainSection } from "../../../widgets/MainSection/MainSection";
 import { Navigation } from "../../../widgets/Navigation/Navigation";
+import { ProjectSection } from "../../../widgets/ProjectSection/ProjectSection";
+import { SkillSection } from "../../../widgets/SkillSection/SkillSection";
 
 export default function HomePage() {
   const [detailOpen, setDetailOpen] = useState(false);
@@ -74,7 +74,11 @@ export default function HomePage() {
       <CustomCursor />
       <Navigation theme={theme} toggleTheme={toggleTheme} />
 
-      <ScrollIndicator activeSection={activeSection} isHidden={activeSection === "contact"} />
+      <ScrollIndicator
+        activeSection={activeSection}
+        isHidden={activeSection === "contact"}
+        sidebarOpen={detailOpen}
+      />
 
       <MainSection />
       <ProjectSection />

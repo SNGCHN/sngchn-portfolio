@@ -31,9 +31,16 @@ export interface BasePortfolioData {
 export interface ProjectData extends BasePortfolioData {
   type: "project";
   image?: string; // 리스트형 디자인에서는 이미지가 없을 수 있음
-  tech: string[]; // tags 대신 tech 통일
+  tech: string[]; // 사용 기술 스택
   github?: string; // 빠른 접근을 위한 선택적 속성
   demo?: string; // 빠른 접근을 위한 선택적 속성
+  timeline?: string; // 프로젝트 기간 (예: "2024.10 — 2025.05")
+  team?: string; // 팀 정보 (예: "Team Project")
+  role?: string; // 역할 (예: "Frontend Developer")
+  contribution?: number; // 기여도 (0-100)
+  keywords?: string[]; // 핵심 키워드
+  achievements?: { title: string; desc: string }[]; // 주요 성과 목록
+  challenges?: { problem: string; solution: string }[]; // 문제 해결 사례
 }
 
 /**

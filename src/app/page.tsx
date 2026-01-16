@@ -1,5 +1,5 @@
-import { HomeScreen } from "@/pages-screen/home/ui/HomeScreen";
+import HomePage from "@/views/home/ui/HomePage";
 
 export default function Home() {
-  return <HomeScreen />;
+  return <HomePage />;
 }

@@ -38,7 +38,13 @@
 @layer base {
   * {
     @apply border-border;
-    cursor: none !important;
+  }
+
+  /* PC에서만 커스텀 커서 적용 */
+  @media (min-width: 768px) {
+    * {
+      cursor: none !important;
+    }
   }
 
   body {

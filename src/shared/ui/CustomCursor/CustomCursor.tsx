@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import React, { useEffect, useState } from "react";
 
 export const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -48,7 +48,7 @@ export const CustomCursor = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-difference bg-white rounded-full"
+      className="hidden md:block fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-difference bg-white rounded-full"
       animate={{
         x: position.x - (isHovering ? 30 : isSloganArea ? 0 : 15),
         y: position.y - (isHovering ? 30 : isSloganArea ? 0 : 15),

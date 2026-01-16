@@ -1,52 +1,43 @@
 import type { JourneyData } from "@/shared/types/portfolio";
 
-export const JOURNEY_MOCK: JourneyData[] = [
+export const JOURNEY_DATA: JourneyData[] = [
   {
-    id: "EXP-01",
+    id: "J01",
     type: "journey",
-    title: "Senior Frontend Engineer",
-    category: "Experience",
-    date: "2023 - Present",
-    description: "핀테크 스타트업 Core Platform 팀 리드",
+    date: "2024.08 — PRESENT",
+    title: "Self-Directed Learning & Projects",
+    category: "Independent Study",
+    description:
+      "모던 프론트엔드 생태계(Next.js 14, App Router) 심화 학습 및 실무급 프로젝트 3종 개발. 성능 최적화와 클린 코드 작성을 목표로 학습 중.",
     details:
-      "디자인 시스템을 총괄하고 레거시 코드를 모던 스택(Next.js, TS)으로 마이그레이션하는 프로젝트를 주도했습니다. 팀의 생산성을 30% 이상 향상시키는 공통 컴포넌트 라이브러리를 구축했습니다.",
-    tech: ["Next.js", "Recoil", "React Query", "Jest"],
+      "단순히 프레임워크를 사용하는 것을 넘어, 리액트의 렌더링 원리와 가상 DOM의 동작 방식을 깊이 있게 파고들었습니다. 특히 복잡한 상태 관리 상황에서 Zustand를 활용하여 렌더링 효율을 30% 이상 개선하는 아키텍처를 설계해 보았습니다.",
+    keywords: ["Next.js 14", "Architecture", "State Management"],
     links: [],
-    achievements: [
-      { title: "Design System 구축", desc: "40종 이상의 공통 컴포넌트 개발 및 문서화 (Storybook)" },
-      {
-        title: "성능 최적화",
-        desc: "Lighthouse 점수 40점대에서 90점대로 개선 (Code Splitting, Image Optimization)",
-      },
-    ],
   },
   {
-    id: "EXP-02",
+    id: "J02",
     type: "journey",
-    title: "Frontend Developer",
-    category: "Experience",
-    date: "2021 - 2023",
-    description: "이커머스 서비스 웹/모바일 프론트엔드 개발",
+    date: "2024.01 — 2024.07",
+    title: "Frontend BootCamp",
+    category: "Code Academy",
+    description:
+      "자바스크립트 엔진의 동작 원리부터 리액트 상태 관리 패턴까지 압축적인 프론트엔드 교육 과정 이수. 팀 프로젝트를 통해 협업 및 코드 리뷰 문화 경험.",
     details:
-      "MAU 50만의 쇼핑몰 웹 서비스를 유지보수하고 신규 기능을 개발했습니다. A/B 테스트 환경을 구축하여 전환율(CVR)을 15% 상승시키는 데 기여했습니다.",
-    tech: ["React", "Redux", "SCSS"],
+      "7개월간의 집중 교육 과정 동안 팀 리더로서 대규모 웹 애플리케이션의 프론트엔드 파트를 총괄했습니다. 코드 리뷰의 중요성을 깨닫고 팀 내의 스타일 가이드를 정의하여 생산성을 높인 경험이 있습니다.",
+    keywords: ["Javascript Core", "Collaboration", "Team Leading"],
     links: [],
-    achievements: [
-      { title: "결제 모듈 개편", desc: "결제 프로세스 이탈률 10% 감소" },
-      { title: "백오피스 개발", desc: "어드민 대시보드 UI/UX 전면 리뉴얼" },
-    ],
   },
   {
-    id: "EDU-01",
+    id: "J03",
     type: "journey",
-    title: "Computer Science",
-    category: "Education",
-    date: "2017 - 2021",
-    description: "OO대학교 컴퓨터공학 학사 졸업",
+    date: "2017.03 — 2024.02",
+    title: "Computer Science & Engineering",
+    category: "University of Korea",
+    description:
+      "컴퓨터 공학 학사 학위 취득. 자료구조, 알고리즘, 네트워크 등 CS 기초 지식 함양. 학과 성적 상위 10% 이내 졸업.",
     details:
-      "자료구조, 알고리즘, 운영체제 등 CS 기초 심화 과정 수료. 웹 프로그래밍 동아리 회장 역임.",
-    tech: ["CS", "Algorithm", "Web"],
+      "학술 정보화와 알고리즘의 효율성에 집중했습니다. 대규모 데이터 구조를 효율적으로 처리하는 알고리즘 최적화를 통해 복잡도 개선 경험을 쌓았으며, 이는 현재 프론트엔드 성능 최적화의 기반이 되었습니다.",
+    keywords: ["Computer Science", "Data Structure", "Algorithms"],
     links: [],
-    achievements: [{ title: "교내 해커톤 대상", desc: "블록체인 기반 투표 시스템 개발" }],
   },
 ];

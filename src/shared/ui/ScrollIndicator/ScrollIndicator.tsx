@@ -70,7 +70,7 @@ export const ScrollIndicator = ({
                   }
                 `}
               >
-                <span className="text-[10px] md:text-[11px] font-mono font-bold tracking-tighter mix-blend-difference">
+                <span className="text-[10px] md:text-[11px] font-bold tracking-tighter mix-blend-difference">
                   {section.label}
                 </span>
               </div>

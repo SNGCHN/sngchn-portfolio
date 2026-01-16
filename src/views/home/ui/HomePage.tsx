@@ -70,7 +70,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className="w-full relative bg-background text-foreground transition-colors duration-300">
+    <main className="w-full h-screen overflow-y-auto snap-y snap-mandatory relative bg-background text-foreground transition-colors duration-300">
       <CustomCursor />
       <Navigation theme={theme} toggleTheme={toggleTheme} />
 

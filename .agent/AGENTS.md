@@ -46,8 +46,13 @@
 - **Responsive**: `scroll-snap-type` iOS Safari 이슈 등 모바일 특성 이슈를 사전에 체크합니다.
 
 ## ⚠️ 커뮤니케이션 및 기록 규칙
-1. **언어**: 모든 커밋 메시지, `task.md`, `implementation_plan.md`, `walkthrough.md` 및 대화 내용은 오직 **한국어**로 작성합니다. 영문 접두사(`feat:`, `fix:`)를 절대 사용하지 않습니다.
-2. **최신 문서 참조 (Context7)**: 라이브러리나 프레임워크의 문법을 사용할 때는 **반드시 `context7` MCP 서버**를 호출하여 최신 공식 문서를 확인한 후 반영합니다.
+1. **커밋 메시지**: 
+   - 접두사(`feat:`, `fix:`, `docs:`, `chore:` 등)는 **영어**로 작성합니다.
+   - 상세 내용은 오직 **한국어**로만 작성합니다.
+2. **문서화 및 대화**: 
+   - `task.md`, `implementation_plan.md`, `walkthrough.md` 및 대화 내용은 오직 **한국어**로 작성합니다.
+3. **최신 문서 참조 (Context7)**: 
+   - 라이브러리나 프레임워크의 문법을 사용할 때는 **반드시 `context7` MCP 서버**를 호출하여 최신 공식 문서를 확인한 후 반영합니다.
 
 ## 📂 주요 파일 위치
 - 디자인 토큰: `src/app/globals.css`

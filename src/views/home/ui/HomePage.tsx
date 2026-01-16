@@ -74,11 +74,7 @@ export default function HomePage() {
       <CustomCursor />
       <Navigation theme={theme} toggleTheme={toggleTheme} />
 
-      <ScrollIndicator
-        activeSection={activeSection}
-        isHidden={activeSection === "contact"}
-        sidebarOpen={detailOpen}
-      />
+      <ScrollIndicator activeSection={activeSection} isHidden={false} sidebarOpen={detailOpen} />
 
       <MainSection />
       <ProjectSection />

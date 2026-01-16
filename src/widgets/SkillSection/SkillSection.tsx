@@ -1,39 +1,8 @@
 "use client";
 
+import { SKILLS_DATA } from "@/shared/constants/skills";
 import { motion } from "motion/react";
 import React from "react";
-
-// ✅ Figma 디자인에 맞춰진 스킬 그룹 데이터입니다.
-// 4개의 카테고리로 분류하여 그리드 레이아웃에 최적화되었습니다.
-const skillGroups = [
-  {
-    category: "FRONTEND",
-    items: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Motion",
-      "Zustand",
-      "Redux",
-      "React Query",
-      "Web Vitals",
-      "Shadcn UI",
-    ],
-  },
-  {
-    category: "LANGUAGES",
-    items: ["JavaScript (ES6+)", "HTML5", "CSS3", "Python", "SQL"],
-  },
-  {
-    category: "TOOLS & DEVOPS",
-    items: ["Git", "GitHub Actions", "Vercel", "Supabase", "Figma", "Docker", "Webpack", "Vite"],
-  },
-  {
-    category: "PRINCIPLES",
-    items: ["Minimalism", "Performance", "Accessibility", "Responsive Design", "Clean Code"],
-  },
-];
 
 /**
  * @description Figma 기반의 새로운 SkillSection 구현체
@@ -63,7 +32,7 @@ export const SkillSection = () => {
 
         {/* 스킬 그룹 그리드: 반응형에 따라 1열 -> 2열 -> 4열로 확장됩니다. */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-8">
-          {skillGroups.map((group, groupIndex) => (
+          {SKILLS_DATA.map((group, groupIndex) => (
             <motion.div
               key={group.category}
               initial={{ opacity: 0, y: 20 }}

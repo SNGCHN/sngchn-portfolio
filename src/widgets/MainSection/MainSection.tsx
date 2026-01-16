@@ -1,43 +1,14 @@
 "use client";
 
-import React from "react";
-import { motion } from "motion/react";
+import { ABOUT_DATA } from "@/shared/constants/about";
 import { Plus } from "lucide-react";
+import { motion } from "motion/react";
+import React from "react";
 
 export const MainSection = () => {
   const openAboutDetail = () => {
-    const aboutData = {
-      id: "ABOUT",
-      title: "SUNGCHAN LEE",
-      category: "Frontend Developer",
-      tech: ["React", "Next.js", "TypeScript", "Motion", "Tailwind CSS"],
-      keywords: [
-        "Interaction Design",
-        "Performance Optimization",
-        "Design Systems",
-        "User Experience",
-        "Minimalist Architecture",
-      ],
-      description:
-        "복잡함을 단순함으로 정제하고, 기술적 정교함을 통해 시각적 즐거움을 전달하는 프론트엔드 개발자 이성찬입니다.",
-      details:
-        "기술은 수단일 뿐, 그 이상의 가치를 전달하는 것이 저의 목표입니다. 픽셀 하나하나의 디테일부터 대규모 서비스의 퍼포먼스까지, 본질에 집중하는 개발을 추구합니다. 현재 서울을 기반으로 활동하며 모던 웹 생태계의 다양한 가능성을 탐구하고 있습니다.",
-      type: "about",
-      links: [
-        {
-          label: "Notion Resume",
-          href: "https://notion.so/sngchn",
-          primary: true,
-        },
-        {
-          label: "Download CV (PDF)",
-          href: "#",
-          secondary: true,
-        },
-      ],
-    };
     const event = new CustomEvent("openDetail", {
-      detail: aboutData,
+      detail: ABOUT_DATA,
     });
     window.dispatchEvent(event);
   };
@@ -62,7 +33,8 @@ export const MainSection = () => {
 
                 <div className="relative group mt-6 md:mt-8 w-fit mx-auto md:mx-0">
                   {/* Clickable Area */}
-                  <div
+                  <button
+                    type="button"
                     onClick={openAboutDetail}
                     className="relative z-10 cursor-pointer flex items-center md:items-baseline gap-3 md:gap-8 group"
                   >
@@ -77,7 +49,7 @@ export const MainSection = () => {
                         size={16}
                       />
                     </motion.div>
-                  </div>
+                  </button>
 
                   {/* Underline Reveal Effect */}
                   <div className="absolute -bottom-2 left-0 w-0 h-[2px] bg-foreground group-hover:w-full transition-all duration-700 ease-[0.16, 1, 0.3, 1]" />

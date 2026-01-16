@@ -453,14 +453,6 @@ export const DetailSidebar = ({ isOpen, onClose, content }: DetailSidebarProps) 
                   </section>
                 )}
               </div>
-
-              {/* Footer Info */}
-              <div className="mt-24 pt-8 border-t border-foreground/5 flex justify-between items-center">
-                <span className="text-[9px] font-mono text-foreground/20 uppercase tracking-[0.3em]">
-                  Index REF: {content.id}
-                </span>
-                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-              </div>
             </div>
           </motion.div>
         </>

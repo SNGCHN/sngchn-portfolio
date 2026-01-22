@@ -1,8 +1,8 @@
 "use client";
 
+import { Menu, Moon, Sun, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Sun, Moon } from "lucide-react";
 
 interface NavigationProps {
   onOpen404?: () => void;
@@ -63,7 +63,7 @@ export const Navigation = ({ onOpen404, theme, toggleTheme }: NavigationProps) =
 
           <div className="flex items-center gap-4">
             <a
-              href="/blog"
+              href="https://blog.sngchn.dev"
               className="px-5 py-2 border border-foreground/10 rounded-full text-[9px] font-bold tracking-[0.2em] hover:bg-foreground hover:text-background transition-all uppercase cursor-pointer"
             >
               Blog
@@ -123,7 +123,7 @@ export const Navigation = ({ onOpen404, theme, toggleTheme }: NavigationProps) =
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
-                href="/blog"
+                href="https://blog.sngchn.dev"
                 className="text-2xl font-bold tracking-tight text-foreground/50 uppercase"
               >
                 Blog
